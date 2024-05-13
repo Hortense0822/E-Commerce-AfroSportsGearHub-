@@ -1,0 +1,196 @@
+ <div class="modal fade" role="dialog" tabindex="-1" id="add-product-modal">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Create Product</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="py-1">
+                      <form class="form" method="POST" action="../actions/addproduct_process.php" enctype="multipart/form-data">
+                        <div class="row">
+                          <div class="col">
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Product Category </label>
+                                      <select
+                                      class="custom-select tm-select-accounts"
+                                      id="category" name="product_cat"
+                                      >
+                                      <option selected>Select category</option>
+                                      <?php view_categories(); ?>
+                                      </select>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Product Brand</label>
+                                  <select
+                                      class="custom-select tm-select-accounts"
+                                      id="category" name= "product_brand"
+                                      >
+                                      <option selected>Select brand</option>
+                                      <?php view_brands(); ?>
+                                      </select>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Product Title</label>
+                                  <input class="form-control" type="text" name="product_title" placeholder="user@example.com">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Product Price</label>
+                                  <input class="form-control" name="product_price" type="text" placeholder="money in cedis">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Product Keyword</label>
+                                  <input class="form-control" name="product_keyword" type="text" placeholder="enter keyword">
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Product Image</label>
+                                  <input class="form-control" type="file" id="product_image" name="product_image">
+                                </div>
+                              </div>
+                            </div>
+                            
+                          
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col d-flex justify-content-end">
+                            <button class="btn btn-primary" type="submit">Save Changes</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" role="dialog" tabindex="-1" id="edit-product-modal">
+              <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Edit Product</h5>
+                    <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="py-1">
+                      <form class="form" method="POST" action="../actions/updateproduct_process.php" enctype="multipart/form-data">
+                        <div class="row">
+                          <div class="col">
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Product Category </label>
+                                      <select
+                                      class="custom-select tm-select-accounts"
+                                      id="category" name="product_cat"
+                                      >
+                                      <option selected>Select category</option>
+                                      <?php view_categories(); ?>
+                                      </select>
+                                </div>
+                              </div>
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Product Brand</label>
+                                  <select
+                                      class="custom-select tm-select-accounts"
+                                      id="brand" name= "product_brand"
+                                      >
+                                      <option selected>Select brand</option>
+                                      <?php view_brands(); ?>
+                                      </select>
+                                  </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Product Title</label>
+                                  <input id="producttitle" class="form-control" type="text" name="product_title" placeholder="user@example.com">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Product Price</label>
+                                  <input id="productprice" class="form-control" name="product_price" type="text" placeholder="money in cedis">
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Product Keyword</label>
+                                  <input id="productkeyword" class="form-control" name="product_keyword" type="text" placeholder="enter keyword">
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                              <div class="col">
+                                <div class="form-group">
+                                  <label>Product Image</label>
+                                  <input id="productimage" class="form-control" type="file" name="product_image">
+                                </div>
+                              </div>
+                            </div>
+
+                            <input id="productid" class="form-control" type="hidden"  name="product_id">
+                            
+                          
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col d-flex justify-content-end">
+                            <button class="btn btn-primary" type="submit">Save Changes</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <script >
+    
+  </script>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script>
+  $(document).ready(function() {
+    // Open Add Product Modal
+    $('.add-product-btn').click(function() {
+      $('#add-product-modal').modal('show');
+    });
+  });
